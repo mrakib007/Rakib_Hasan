@@ -8,18 +8,27 @@ const Navbar = () => {
   const { isDarkMode } = useTheme();
   const [scrolled, setScrolled] = useState(false);
 
-  // Track scroll position to change navbar color
+  // Track scroll position to change navbar color (only for lg screens)
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight - 100) {
-        setScrolled(true);
+      if (window.innerWidth >= 1024) { // Only apply transparency effect for large screens
+        if (window.scrollY > window.innerHeight - 100) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
       } else {
-        setScrolled(false);
+        setScrolled(true); // On mobile, always keep it solid
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll); // Update if screen resizes
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   const navItems = [
@@ -39,7 +48,7 @@ const Navbar = () => {
           ? isDarkMode 
             ? 'bg-gray-900/90 shadow-lg' 
             : 'bg-white/90 shadow-lg'
-          : 'bg-transparent'
+          : 'lg:bg-transparent bg-gray-900/90' // Always solid on mobile, transparent on large screens
       }`}
     >
       <div className="container mx-auto max-w-[1280px] px-6 md:px-12 lg:px-20">
@@ -66,12 +75,12 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <button
               className={`hover:text-accent transition-colors ${
                 isDarkMode ? 'text-white' : 'text-gray-900'

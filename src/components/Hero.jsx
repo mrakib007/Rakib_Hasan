@@ -56,10 +56,13 @@ function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 max-w-7xl mx-auto gap-12 py-20 lg:py-0"
+        className="relative h-screen flex flex-col-reverse lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 max-w-7xl mx-auto gap-8 lg:gap-12 py-8 lg:py-0"
       >
         {/* Left Content */}
-        <div className="relative z-10 text-center lg:text-left lg:max-w-2xl">
+        <motion.div 
+          variants={itemVariants}
+          className="relative z-10 text-center lg:text-left lg:max-w-2xl w-full"
+        >
           <motion.div
             variants={itemVariants}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 backdrop-blur-sm mb-6"
@@ -75,7 +78,7 @@ function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6"
+            className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-6"
           >
             <span className="bg-gradient-to-r from-white via-accent to-purple-500 text-transparent bg-clip-text">
               Hey, I'm Rakib Hasan
@@ -98,7 +101,7 @@ function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-muted mb-8 max-w-2xl"
+            className="text-base lg:text-xl text-muted mb-8 max-w-2xl mx-auto lg:mx-0"
           >
             Passionate about crafting exceptional digital experiences through clean code and intuitive design. Specializing in modern frontend technologies and interactive user interfaces.
           </motion.p>
@@ -125,6 +128,7 @@ function Hero() {
               Let's Connect
             </a>
           </motion.div>
+
           <motion.div
             variants={itemVariants}
             className="flex justify-center lg:justify-start gap-4"
@@ -143,16 +147,16 @@ function Hero() {
                 className={`p-3 bg-secondary/30 rounded-xl hover:bg-secondary/50 
                           transition-colors duration-300 ${social.color}`}
               >
-                <social.icon className="w-6 h-6" />
+                <social.icon className="w-5 h-5 lg:w-6 lg:h-6" />
               </motion.a>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Right Image */}
         <motion.div
           variants={itemVariants}
-          className="relative w-full lg:w-[500px] h-[500px] flex items-center justify-center"
+          className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] flex items-center justify-center"
         >
           {/* Animated Gradient Background */}
           <motion.div
@@ -173,7 +177,7 @@ function Hero() {
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative z-10 w-full lg:w-[400px] h-[400px] flex items-center justify-center rounded-3xl overflow-hidden shadow-xl shadow-accent/20 border border-secondary"
+            className="relative z-10 w-full h-full mt-[120px] lg:mt-0 lg:w-[400px] lg:h-[400px] flex items-center justify-center rounded-3xl overflow-hidden shadow-xl shadow-accent/20 border border-secondary"
           >
             {/* Background Animation */}
             <motion.div
@@ -199,7 +203,6 @@ function Hero() {
             {/* Overlay Gradient Effect */}
             <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
           </motion.div>
-
         </motion.div>
       </motion.section>
     </div>
