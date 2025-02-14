@@ -26,3 +26,30 @@ html {
   background-color: #646cff;
   color: white;
 }
+
+/* Custom Cursor (Animated) */
+.custom-cursor {
+  position: fixed;
+  width: 20px; /* Small cursor */
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.8); /* White border */
+  border-radius: 50%;
+  pointer-events: none; /* Avoid interference with clicking */
+  mix-blend-mode: difference; /* Cool visual effect */
+  z-index: 9999;
+  transition: transform 0.15s ease-out;
+}
+
+/* Keep the default system cursor visible */
+body {
+  cursor: default;
+}
+
+/* Extra: When hovering over links & buttons, the custom cursor grows */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor,
+.hover-effect:hover ~ .custom-cursor {
+  transform: scale(1.5);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+}

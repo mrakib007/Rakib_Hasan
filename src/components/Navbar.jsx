@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import ThemeToggle from './ThemeToggle';
@@ -6,6 +6,21 @@ import ThemeToggle from './ThemeToggle';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isDarkMode } = useTheme();
+  const [scrolled, setScrolled] = useState(false);
+
+  // Track scroll position to change navbar color
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight - 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -17,15 +32,17 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed w-full z-50 shadow-lg ${
-        isDarkMode 
-          ? 'bg-gray-900/90 backdrop-blur-sm' 
-          : 'bg-white/90 backdrop-blur-sm'
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      className={`fixed w-full z-50 backdrop-blur-lg transition-all duration-300 ${
+        scrolled 
+          ? isDarkMode 
+            ? 'bg-gray-900/90 shadow-lg' 
+            : 'bg-white/90 shadow-lg'
+          : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="flex justify-between items-center h-16">
           <a 
             href="#" 
@@ -86,11 +103,9 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className={`md:hidden ${
-              isDarkMode 
-                ? 'bg-gray-800/95' 
-                : 'bg-white/95'
-            } backdrop-blur-sm rounded-lg mt-2 shadow-xl`}
+            className={`md:hidden rounded-lg mt-2 shadow-xl transition-all duration-300 ${
+              isDarkMode ? 'bg-gray-800/95' : 'bg-white/95'
+            } backdrop-blur-sm`}
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
