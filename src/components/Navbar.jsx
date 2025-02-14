@@ -34,7 +34,7 @@ const Navbar = () => {
     <motion.nav 
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className={`fixed w-full z-50 backdrop-blur-lg transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-lg ${
         scrolled 
           ? isDarkMode 
             ? 'bg-gray-900/90 shadow-lg' 
@@ -42,7 +42,7 @@ const Navbar = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 max-w-[1200px]">
+      <div className="container mx-auto max-w-[1280px] px-6 md:px-12 lg:px-20">
         <div className="flex justify-between items-center h-16">
           <a 
             href="#" 
