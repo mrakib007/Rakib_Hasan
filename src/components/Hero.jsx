@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Code2, Sparkles, Rocket, Github, Twitter, Linkedin, Mail } from 'lucide-react';
 import heroPhoto from '../assets/rakib.jpg'
+import bgImage from '../assets/3 bg.jpg'
 
 function Hero() {
   const containerVariants = {
@@ -45,7 +46,11 @@ function Hero() {
   };
 
   return (
-    <div className="min-h-screen bg-primary overflow-hidden">
+    <div
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
+      style={{ backgroundImage: `url(${bgImage})` }} // Set Background Image
+    >
+      <div className="absolute inset-0 bg-black/40" />
       {/* Decorative Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[40%] -right-[25%] w-[80%] h-[80%] bg-accent/5 rounded-full blur-[120px]" />
@@ -59,7 +64,7 @@ function Hero() {
         className="relative h-screen flex flex-col-reverse lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 max-w-7xl mx-auto gap-8 lg:gap-12 py-8 lg:py-0"
       >
         {/* Left Content */}
-        <motion.div 
+        <motion.div
           variants={itemVariants}
           className="relative z-10 text-center lg:text-left lg:max-w-2xl w-full"
         >
