@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Code2, Sparkles, Rocket, Github, Twitter, Linkedin, Mail } from 'lucide-react';
-import heroPhoto from '../assets/rakib san.jpg';
+import heroPhoto from '../assets/rakib.jpg'
 
 function Hero() {
   const containerVariants = {
