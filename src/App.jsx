@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen transition-colors duration-300">
-        <CustomCursor /> {/* Add the Custom Cursor */}
+        <CustomCursor /> 
         <Navbar />
         <Hero />
         <About />
