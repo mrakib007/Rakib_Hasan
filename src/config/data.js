@@ -24,3 +24,20 @@ export const education = [
         achievement: 'GPA: 5.00'
     }
 ];
+
+export const skills = [
+    'JavaScript',
+    'ReactJs',
+    'NodeJs',
+    'TypeScript',
+    'Redux',
+    'Tanstack Query',
+    'HTML5',
+    'CSS3',
+    'Tailwind CSS',
+    'Bootstrap 5',
+    'Material UI',
+    'Framer Motion',
+    'Shadcn',
+    'Git'
+];
