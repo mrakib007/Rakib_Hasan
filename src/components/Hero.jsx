@@ -45,10 +45,19 @@ function Hero() {
     }
   };
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/MD.Rakibul Hasan.pdf";
+    link.download = "MD.Rakibul_Hasan_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div
       className="relative min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
-      style={{ backgroundImage: `url(${bgImage})` }} // Set Background Image
+      style={{ backgroundImage: `url(${bgImage})` }} 
     >
       <div className="absolute inset-0 bg-black/40" />
       {/* Decorative Elements */}
@@ -115,16 +124,15 @@ function Hero() {
             variants={itemVariants}
             className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
           >
-            <a
-              href="#projects"
+            <button
+              onClick={handleDownload}
               className="group px-6 py-3 bg-accent text-white font-medium rounded-lg 
              transition-all duration-300 transform hover:scale-105 hover:shadow-md 
              hover:shadow-accent/30 relative overflow-hidden"
             >
-              <span className="relative z-10">View My Work</span>
+              <span className="relative z-10">Download Resume</span>
               <div className="absolute inset-0 bg-gradient-to-r from-accent to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </a>
-
+            </button>
             <a
               href="#contact"
               className="px-6 py-3 bg-secondary/50 text-white font-medium rounded-lg 
