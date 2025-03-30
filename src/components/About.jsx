@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { 
-  FaGithub, 
-  FaLinkedin, 
-  FaEnvelope, 
-  FaBriefcase, 
-  FaGraduationCap, 
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaBriefcase,
+  FaGraduationCap,
   FaCode,
   FaRegLightbulb
 } from 'react-icons/fa';
@@ -14,7 +14,6 @@ import { education, experience } from '../config/data';
 const About = () => {
   const { isDarkMode } = useTheme();
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -43,13 +42,13 @@ const About = () => {
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
       className={`min-h-screen py-28 px-4 ${
-        isDarkMode 
-          ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900' 
+        isDarkMode
+          ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900'
           : 'bg-gradient-to-br from-gray-50 via-white to-gray-50'
       }`}
     >
       <div className="container mx-auto max-w-[1280px] px-6 md:px-12 lg:px-20">
-        <motion.h2 
+        <motion.h2
           variants={itemVariants}
           className={`text-5xl font-heading font-bold text-center mb-16 ${
             isDarkMode ? 'text-white' : 'text-gray-900'
@@ -60,16 +59,14 @@ const About = () => {
             <FaRegLightbulb className="inline-block animate-pulse" />
           </div>
         </motion.h2>
-        
+
         <div className="grid grid-cols-1 xl:grid-cols-[1.2fr_1fr] gap-12">
-          {/* Left Column */}
           <div className="space-y-12">
-            {/* Professional Experience */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className={`p-8 rounded-2xl shadow-2xl ${
-                isDarkMode 
-                  ? 'bg-gray-800/70 backdrop-blur-lg border border-gray-700' 
+                isDarkMode
+                  ? 'bg-gray-800/70 backdrop-blur-lg border border-gray-700'
                   : 'bg-white border border-gray-100'
               }`}
             >
@@ -85,8 +82,8 @@ const About = () => {
                   Experience
                 </h3>
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 className="space-y-6"
                 variants={containerVariants}
               >
@@ -105,7 +102,7 @@ const About = () => {
                     </div>
                     <ul className="mt-4 space-y-3">
                       {experience.responsibilities.map((resp, index) => (
-                        <motion.li 
+                        <motion.li
                           key={index}
                           variants={itemVariants}
                           className={`flex items-start gap-3 ${
@@ -123,12 +120,11 @@ const About = () => {
               </motion.div>
             </motion.div>
 
-            {/* Education */}
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className={`p-8 rounded-2xl shadow-2xl ${
-                isDarkMode 
-                  ? 'bg-gray-800/70 backdrop-blur-lg border border-gray-700' 
+                isDarkMode
+                  ? 'bg-gray-800/70 backdrop-blur-lg border border-gray-700'
                   : 'bg-white border border-gray-100'
               }`}
             >
@@ -144,13 +140,13 @@ const About = () => {
                   Education
                 </h3>
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 className="space-y-6"
                 variants={containerVariants}
               >
                 {education.map((edu, index) => (
-                  <motion.div 
+                  <motion.div
                     key={index}
                     variants={itemVariants}
                     className={`p-6 rounded-xl ${
@@ -176,12 +172,11 @@ const About = () => {
             </motion.div>
           </div>
 
-          {/* Right Column - Contact */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className={`p-8 rounded-2xl shadow-2xl h-fit sticky top-28 ${
-              isDarkMode 
-                ? 'bg-gray-800/70 backdrop-blur-lg border border-gray-700' 
+              isDarkMode
+                ? 'bg-gray-800/70 backdrop-blur-lg border border-gray-700'
                 : 'bg-white border border-gray-100'
             }`}
           >
@@ -197,8 +192,8 @@ const About = () => {
                 Let's Connect
               </h3>
             </div>
-            
-            <motion.div 
+
+            <motion.div
               className="grid gap-4"
               variants={containerVariants}
             >
@@ -212,14 +207,14 @@ const About = () => {
                 {
                   icon: FaGithub,
                   title: "GitHub",
-                  text: "@yourusername",
-                  href: "https://github.com"
+                  text: "@mrakib007",
+                  href: "https://github.com/mrakib007"
                 },
                 {
                   icon: FaLinkedin,
                   title: "LinkedIn",
-                  text: "in/yourprofile",
-                  href: "https://linkedin.com"
+                  text: "in/rakib1997",
+                  href: "https://www.linkedin.com/in/rakib1997/"
                 }
               ].map((item, index) => (
                 <motion.a
@@ -229,15 +224,15 @@ const About = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`group flex items-center gap-5 p-5 rounded-xl transition-all ${
-                    isDarkMode 
-                      ? 'hover:bg-gray-700/50' 
+                    isDarkMode
+                      ? 'hover:bg-gray-700/50'
                       : 'hover:bg-gray-50'
                   }`}
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className={`p-4 rounded-lg ${
-                    isDarkMode 
-                      ? 'bg-accent/20 group-hover:bg-accent/30' 
+                    isDarkMode
+                      ? 'bg-accent/20 group-hover:bg-accent/30'
                       : 'bg-accent/10 group-hover:bg-accent/20'
                   }`}>
                     <item.icon className="text-2xl text-accent" />

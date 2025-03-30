@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Code2, Sparkles, Rocket, Github, Twitter, Linkedin, Mail } from 'lucide-react';
-import bgImage from '../assets/3 bg.jpg'
+import bgImage from '../assets/3 bg.jpg';
 
 function Hero() {
   const containerVariants = {
@@ -56,10 +56,9 @@ function Hero() {
   return (
     <div
       className="relative min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
-      style={{ backgroundImage: `url(${bgImage})` }} 
+      style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="absolute inset-0 bg-black/40" />
-      {/* Decorative Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-[40%] -right-[25%] w-[80%] h-[80%] bg-accent/5 rounded-full blur-[120px]" />
         <div className="absolute -bottom-[40%] -left-[25%] w-[80%] h-[80%] bg-purple-500/5 rounded-full blur-[120px]" />
@@ -71,7 +70,6 @@ function Hero() {
         animate="visible"
         className="relative h-screen flex flex-col-reverse lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 max-w-7xl mx-auto gap-8 lg:gap-12 py-8 lg:py-0"
       >
-        {/* Left Content */}
         <motion.div
           variants={itemVariants}
           className="relative z-10 text-center lg:text-left lg:max-w-2xl w-full"
@@ -146,14 +144,16 @@ function Hero() {
             className="flex justify-center lg:justify-start gap-4"
           >
             {[
-              { icon: Github, href: "#", color: "hover:text-[#2ea44f]" },
-              { icon: Twitter, href: "#", color: "hover:text-[#1DA1F2]" },
-              { icon: Linkedin, href: "#", color: "hover:text-[#0A66C2]" },
-              { icon: Mail, href: "#", color: "hover:text-[#EA4335]" }
+              { icon: Github, href: "https://github.com/mrakib007", color: "hover:text-[#2ea44f]" },
+              { icon: Twitter, href: "https://x.com/m_rakib007", color: "hover:text-[#1DA1F2]" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/rakib1997/", color: "hover:text-[#0A66C2]" },
+              { icon: Mail, href: "mailto:mrakibhasan199744@gmail.com", color: "hover:text-[#EA4335]" }
             ].map((social, index) => (
               <motion.a
                 key={index}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 variants={iconVariants}
                 whileHover="hover"
                 className={`p-3 bg-secondary/30 rounded-xl hover:bg-secondary/50 
@@ -165,12 +165,10 @@ function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right Image */}
         <motion.div
           variants={itemVariants}
           className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] flex items-center justify-center"
         >
-          {/* Animated Gradient Background */}
           <motion.div
             animate={{
               scale: [1, 1.2, 1],
@@ -183,15 +181,12 @@ function Hero() {
             }}
             className="absolute w-full h-full bg-gradient-to-br from-accent/20 via-purple-500/20 to-accent/20 rounded-full blur-[100px] opacity-50"
           />
-
-          {/* Image Container */}
           <motion.div
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="relative z-10 w-full h-full mt-[120px] lg:mt-0 lg:w-[400px] lg:h-[400px] flex items-center justify-center rounded-3xl overflow-hidden shadow-xl shadow-accent/20 border border-secondary"
           >
-            {/* Background Animation */}
             <motion.div
               animate={{
                 scale: [1, 1.1, 1],
@@ -204,15 +199,11 @@ function Hero() {
               }}
               className="absolute w-full h-full bg-gradient-to-br from-accent/20 via-purple-500/20 to-accent/20 rounded-full blur-[80px] opacity-50"
             />
-
-            {/* Profile Image */}
             <img
               src="https://res.cloudinary.com/dtbt0x5pm/image/upload/v1743326234/rakib_hu6rat.jpg"
               alt="Rakib Hasan"
               className="w-full h-full object-cover rounded-3xl"
             />
-
-            {/* Overlay Gradient Effect */}
             <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
           </motion.div>
         </motion.div>
