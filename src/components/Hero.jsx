@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Code2, Sparkles, Rocket, Github, Twitter, Linkedin, Mail } from 'lucide-react';
-import heroPhoto from '../assets/rakib.jpg'
 import bgImage from '../assets/3 bg.jpg'
 
 function Hero() {
@@ -208,7 +207,7 @@ function Hero() {
 
             {/* Profile Image */}
             <img
-              src={heroPhoto}
+              src="https://res.cloudinary.com/dtbt0x5pm/image/upload/v1743326234/rakib_hu6rat.jpg"
               alt="Rakib Hasan"
               className="w-full h-full object-cover rounded-3xl"
             />

@@ -1,57 +1,7 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import { useTheme } from '../context/ThemeContext';
-
-const projects = [
-  {
-    title: 'YourEpub',
-    period: 'August 2024 - Present',
-    description: [
-      'Interactive & Multimedia Integration: Developed MCQs, hyperlinks, and forms. Integrated audio, video, and high-quality images for immersive reading.',
-      'Multi-Page Navigation & Content Structuring: Built multi-page architecture and refined content tools for smooth EPUB creation.',
-      'PWA & Offline Capabilities: Added offline functionality and optimized caching strategies.',
-      'Text-to-Speech (TTS) Enhancements: Customized TTS voice options for better accessibility.',
-      'Accessibility & Compliance: Ensured ARIA roles and screen-reader compatibility.',
-      'User Experience & Design Improvements: Enhanced real-time layout preview for intuitive EPUB creation.'
-    ],
-    technologies: ['React', 'Next.js', 'TailwindCSS', 'Framer Motion', 'IndexedDB'],
-    links: {
-      github: '#',
-      live: '#'
-    },
-    image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=YourEpub'
-  },
-  {
-    title: 'Check Me',
-    period: 'July 2024 - September 2024',
-    description: [
-      'Three Panels: Includes School, Teacher, and Student panels for comprehensive management.',
-      'Textbook Provision: Schools supply textbooks; Teachers create assessments based on these textbooks and skills.',
-      'Student Engagement: Students participate in assessments and track their progress, supported by the system used across 40,000 schools in Japan.'
-    ],
-    technologies: ['React', 'TypeScript', 'Firebase', 'Material-UI', 'Redux Toolkit'],
-    links: {
-      github: '#',
-      live: '#'
-    },
-    image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Check+Me'
-  },
-  {
-    title: 'Customer Relationship Management (CRM)',
-    period: 'August 2024 - Present',
-    description: [
-      'CRM Development: Designing and developing a CRM system to optimize client interactions and streamline sales processes',
-      'Enhanced Strategies: Implementing features to improve sales and marketing strategies and boost customer support.',
-      'Data Integration: Centralizing data to facilitate better decision-making and effective relationship management.'
-    ],
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'TanStack Query', 'Chakra UI'],
-    links: {
-      github: '#',
-      live: '#'
-    },
-    image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=CRM+System'
-  }
-];
+import { projects } from '../config/data';
 
 const Projects = () => {
   const { isDarkMode } = useTheme();
@@ -70,7 +20,7 @@ const Projects = () => {
         </h2>
 
         <div className="max-w-6xl mx-auto space-y-20">
-          {projects.map((project, index) => (
+          {projects?.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 50 }}
@@ -85,18 +35,16 @@ const Projects = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className={`absolute inset-0 ${isDarkMode ? 'bg-gray-900/60' : 'bg-white/60'} opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6`}>
-                  <a
-                    href={project.links.github}
-                    className="p-3 rounded-full bg-accent/90 text-white hover:bg-accent transition-colors"
-                  >
-                    <FaGithub className="text-xl" />
-                  </a>
-                  <a
-                    href={project.links.live}
-                    className="p-3 rounded-full bg-accent/90 text-white hover:bg-accent transition-colors"
-                  >
-                    <FaExternalLinkAlt className="text-xl" />
-                  </a>
+                  {project.links.live && (
+                    <a
+                      href={project.links.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full bg-accent/90 text-white hover:bg-accent transition-colors"
+                    >
+                      <FaExternalLinkAlt className="text-xl" />
+                    </a>
+                  )}
                 </div>
               </div>
 
