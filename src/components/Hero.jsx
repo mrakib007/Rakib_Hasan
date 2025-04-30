@@ -68,63 +68,63 @@ function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative h-screen flex flex-col-reverse lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 max-w-7xl mx-auto gap-8 lg:gap-12 py-8 lg:py-0"
+        className="relative min-h-screen flex flex-col-reverse lg:flex-row items-center justify-between px-4 sm:px-6 md:px-12 lg:px-20 max-w-7xl mx-auto gap-6 md:gap-8 lg:gap-12 py-16 md:py-8 lg:py-0"
       >
         <motion.div
           variants={itemVariants}
-          className="relative z-10 text-center lg:text-left lg:max-w-2xl w-full"
+          className="relative z-10 text-center lg:text-left lg:max-w-2xl w-full mt-12 sm:mt-8 md:mt-4 lg:mt-0"
         >
           <motion.div
             variants={itemVariants}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 backdrop-blur-sm mb-6"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-secondary/50 backdrop-blur-sm mb-4 sm:mb-6"
           >
             <motion.span
               animate={floatingAnimation}
               className="text-accent"
             >
-              <Sparkles className="w-5 h-5" />
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
             </motion.span>
-            <span className="text-sm text-muted">Available for new opportunities</span>
+            <span className="text-xs sm:text-sm text-muted">Available for new opportunities</span>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-4 sm:mb-6"
           >
             <span className="bg-gradient-to-r from-white via-accent to-purple-500 text-transparent bg-clip-text">
-              Hey, I'm Rakib Hasan
+              Hey, I&apos;m Rakib Hasan
             </span>
           </motion.h1>
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6"
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-4 sm:mb-6"
           >
-            <div className="flex items-center gap-2 px-4 py-2 bg-secondary/30 rounded-full">
-              <Code2 className="w-5 h-5 text-accent" />
-              <span className="text-muted">Frontend Engineer</span>
+            <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-secondary/30 rounded-full">
+              <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
+              <span className="text-xs sm:text-sm text-muted">Frontend Engineer</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-secondary/30 rounded-full">
-              <Rocket className="w-5 h-5 text-purple-500" />
-              <span className="text-muted">2+ Years Experience</span>
+            <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-secondary/30 rounded-full">
+              <Rocket className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
+              <span className="text-xs sm:text-sm text-muted">2+ Years Experience</span>
             </div>
           </motion.div>
 
           <motion.p
             variants={itemVariants}
-            className="text-base lg:text-xl text-muted mb-8 max-w-2xl mx-auto lg:mx-0"
+            className="text-sm sm:text-base lg:text-xl text-muted mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0"
           >
             Passionate about crafting exceptional digital experiences through clean code and intuitive design. Specializing in modern frontend technologies and interactive user interfaces.
           </motion.p>
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
+            className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-4 sm:mb-6"
           >
             <button
               onClick={handleDownload}
-              className="group px-6 py-3 bg-accent text-white font-medium rounded-lg 
-             transition-all duration-300 transform hover:scale-105 hover:shadow-md 
+              className="group px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-accent text-white font-medium rounded-lg
+             transition-all duration-300 transform hover:scale-105 hover:shadow-md
              hover:shadow-accent/30 relative overflow-hidden"
             >
               <span className="relative z-10">Download Resume</span>
@@ -132,16 +132,16 @@ function Hero() {
             </button>
             <a
               href="#contact"
-              className="px-6 py-3 bg-secondary/50 text-white font-medium rounded-lg 
+              className="px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-secondary/50 text-white font-medium rounded-lg
              transition-all duration-300 transform hover:scale-105 hover:bg-secondary/60"
             >
-              Let's Connect
+              Let&apos;s Connect
             </a>
           </motion.div>
 
           <motion.div
             variants={itemVariants}
-            className="flex justify-center lg:justify-start gap-4"
+            className="flex justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4"
           >
             {[
               { icon: Github, href: "https://github.com/mrakib007", color: "hover:text-[#2ea44f]" },
@@ -156,10 +156,10 @@ function Hero() {
                 rel="noopener noreferrer"
                 variants={iconVariants}
                 whileHover="hover"
-                className={`p-3 bg-secondary/30 rounded-xl hover:bg-secondary/50 
+                className={`p-2 sm:p-3 bg-secondary/30 rounded-lg sm:rounded-xl hover:bg-secondary/50
                           transition-colors duration-300 ${social.color}`}
               >
-                <social.icon className="w-5 h-5 lg:w-6 lg:h-6" />
+                <social.icon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
               </motion.a>
             ))}
           </motion.div>
@@ -167,7 +167,7 @@ function Hero() {
 
         <motion.div
           variants={itemVariants}
-          className="relative w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] flex items-center justify-center"
+          className="relative w-full max-w-[280px] h-[280px] sm:max-w-[300px] sm:h-[300px] md:max-w-[350px] md:h-[350px] lg:w-[500px] lg:h-[500px] flex items-center justify-center"
         >
           <motion.div
             animate={{
@@ -185,7 +185,7 @@ function Hero() {
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative z-10 w-full h-full mt-[120px] lg:mt-0 lg:w-[400px] lg:h-[400px] flex items-center justify-center rounded-3xl overflow-hidden shadow-xl shadow-accent/20 border border-secondary"
+            className="relative z-10 w-full h-full mt-[60px] sm:mt-[80px] md:mt-[100px] lg:mt-0 lg:w-[400px] lg:h-[400px] flex items-center justify-center rounded-3xl overflow-hidden shadow-xl shadow-accent/20 border border-secondary"
           >
             <motion.div
               animate={{
